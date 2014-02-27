@@ -1,0 +1,12 @@
+# NOTE This file is manage by puppet
+# ALL manual changes will be overwritten
+
+Defaults        env_reset
+Defaults        mail_badpass
+Defaults        secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+Defaults        env_keep += "SSH_AUTH_SOCK"
+
+# User privilege specification
+root    ALL=(ALL:ALL) ALL
+
+#includedir /etc/sudoers.d

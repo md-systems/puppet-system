@@ -1,0 +1,30 @@
+# NOTE This file is manage by puppet
+# ALL manual changes will be overwritten
+
+Protocol 2
+Port 22
+
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_dsa_key
+HostKey /etc/ssh/ssh_host_ecdsa_key
+
+SyslogFacility AUTH
+LogLevel INFO
+
+ChallengeResponseAuthentication no
+HostbasedAuthentication no
+PasswordAuthentication no
+PubkeyAuthentication yes
+RhostsRSAAuthentication no
+RSAAuthentication yes
+
+PermitEmptyPasswords no
+PermitRootLogin yes
+
+PrintMotd yes
+StrictModes yes
+X11Forwarding no
+
+Subsystem sftp /usr/lib/openssh/sftp-server
+
+AllowGroups root sysadmins <%= @hostname %>_sysadmins developers projects

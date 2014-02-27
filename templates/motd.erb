@@ -1,0 +1,17 @@
+
+Hostname:   <%= @hostname %>
+Domain:     <%= @domain %>
+
+IP address: <%= @ipaddress %>
+Netmask:    <%= @netmask %>
+Macaddress: <%= @macaddress %>
+
+System: <%= @lsbdistdescription %> kernel <%= @kernelversion %>
+Uptime: <%= @uptime %>
+Role:   <%= @role %>
+
+Memory: <%= sprintf('%.2f', @memorysize_mb.to_f - @memoryfree_mb.to_f) %> MB / <%= @memorysize_mb %> MB
+Swap:   <%= sprintf('%.2f', @swapsize_mb.to_f - @swapfree_mb.to_f) %> MB / <%= @swapsize_mb %> MB
+
+Last puppet run: <%= Time.now.strftime('%a %b %d %H:%M:%S %Z %Y') %>
+
