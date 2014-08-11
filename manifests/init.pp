@@ -27,7 +27,7 @@ class system {
   include system::packages
   include system::ssh
   include system::users
-  #include system::backup
+  include system::backup
 
   Class['system::groups']
     -> User<| groups == 'sysadmins' |>

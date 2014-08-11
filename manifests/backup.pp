@@ -1,4 +1,4 @@
-# == Class: system::facts
+# == Class: system::backup
 #
 # Ensures preconditions for having clean backups.
 #
@@ -15,12 +15,7 @@
 # Copyright 2013 MD Systems.
 #
 class system::backup {
-  if defined( "::mysql::backup") {
-    class {'mysql::backup':
-      defaults           => '/etc/mysql/debian.cnf',
-      backupdir          => '/var/backups/mysql',
-      backuprotate       => 2,
-      delete_before_dump => true,
-    }
+  if defined(Class['mysql::server']) {
+    include mysql::backup
   }
 }
