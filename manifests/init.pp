@@ -23,7 +23,6 @@
 class system {
   include system::facts
   include system::groups
-  include system::motd
   include system::packages
   include system::ssh
   include system::users
